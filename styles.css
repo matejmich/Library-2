@@ -1,0 +1,113 @@
+body {
+    display: grid;
+    margin: 0;
+    padding: 10px;
+    grid-template-rows: 10vh 80vh 10vh;
+    background: linear-gradient(to bottom, #66B1AA 0%, #365458 100%);;
+    color: white;
+    font-family: monospace;
+
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    font-size: 30px;
+    
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addBtn {
+    color: white;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 80px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+.main {
+    padding: 20px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 3px solid white;
+    border-radius: 10px;
+    
+}
+.library {
+    display: flex;
+}
+.book {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.modal {
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    max-width: 80%;
+    height: 800px;
+}
+.modal-inner {
+    width: 1fr;
+    height: 1fr;
+    z-index: 11;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .8);
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.close-button {
+   font-size: 20px;
+   width: 100%;
+    color: white;
+    background-color: black;
+}
+input {
+    border: none;
+    background-color: rgb(199, 199, 199);
+}

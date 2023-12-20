@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <script defer src="script.js"></script>
+    <div class="header">
+        <button data-modal-target="#modal" id="addBtn">+</button>
+        <h1>The LIBRARY</h1>
+    </div>
+    <div class="main">
+        <div class="library">
+            <div class="book">
+                <div class="title">Title</div>
+                <div class="author">Author</div>
+                <div>Pages</div>
+                <div>Read</div>
+                <input type="checkbox">
+                <button>Remove</button>
+                
+            </div>
+            <div class="book">
+                <div class="title">2</div>
+                <div class="author">Author</div>
+                <div>Pages</div>
+                <div>Read</div>
+                <input type="checkbox">
+                <button>Remove</button>
+                
+            </div>
+        </div>
+         <!-- pop up screen (adding a book) -->
+         <div id="overlay"></div>
+         <div class="modal" id="modal">
+            <div class="modal-inner">
+                <button data-modal-close class="close-button" >&times;</button>
+                <form action="/script.js" id="form">
+                    <legend>Add new book</legend>
+                    <input type="text" name="title" id="title" placeholder="Title" class="input">
+                    <input type="text" name="author" id="author" placeholder="Author" class="input">
+                    <input type="number" name="pages" id="pages" placeholder="0" class="input">
+                    <label for="read"></label>
+                    <input type="checkbox" name="read" id="read" class="checkbox">
+                    <button dat-modal-close type="submit" id="submit">Add</button>
+
+                </form>
+            </div>
+         </div>
+    </div>
+    <div class="footer">
+        This project was created as a part of <a href="https://www.theodinproject.com/">The Odin Project</a>. 
+    </div>
+</body>
+</html>
