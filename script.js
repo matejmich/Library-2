@@ -81,6 +81,12 @@ function renderLibrary() {
         bookDiv.classList.add("book")
         library.appendChild(bookDiv)
 
+        let deleteBookBTN = document.createElement("button")
+        deleteBookBTN.classList.add("deleteBook")
+        deleteBookBTN.setAttribute("id",i)
+        deleteBookBTN.innerHTML = "&times;"
+        bookDiv.appendChild(deleteBookBTN)
+
         let bookTitle = document.createElement("div")
         bookTitle.classList.add("title")
         bookTitle.textContent = book.title
@@ -96,18 +102,32 @@ function renderLibrary() {
         bookPages.textContent = book.pages
         bookDiv.appendChild(bookPages)
 
+        let bookSwitch = document.createElement("label")
+        bookSwitch.classList.add("switch")
+        bookDiv.appendChild(bookSwitch)
+
         let bookRead = document.createElement("input")
         bookRead.type = "checkbox"
         bookRead.classList.add("read")
        
-        bookDiv.appendChild(bookRead)
+        bookSwitch.appendChild(bookRead)
         if (book.read === true) {
             bookRead.checked = true;
         }
+        let bookSlider = document.createElement("span")
+        bookSlider.classList.add("slider", "round")
+        bookSwitch.appendChild(bookSlider)
+
+
+        // delete our own book
+        deleteBookBTN.addEventListener("click", () => {
+            myLibrary.splice(i, 1)
+            renderLibrary()
+        })
     }
     
 }
-}
+
 
 function deleteLibrary() {
     const library = document.querySelector(".library")
@@ -117,3 +137,17 @@ function deleteLibrary() {
 function clearFrom() {
     document.getElementById("form").reset()
 }
+// deleting individual books
+let eraseBook = document.querySelectorAll(".deleteBook")
+
+
+eraseBook.forEach(button => {
+    button.addEventListener("click", () => {
+        renderLibrary()
+    })
+    
+})
+
+}
+
+// validation
